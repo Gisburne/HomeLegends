@@ -108,7 +108,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'HomeLegends.urls'
 
-TEMPLATE_DIRS = ('/home/erik/PycharmProjects/HomeLegends/templates',)
+TEMPLATE_DIRS = ('c:/Users/Erik/PycharmProjects/HomeLegends/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
