@@ -48,31 +48,14 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-CKEDITOR_MEDIA_URL = '/media/ckeditor'
+CKEDITOR_MEDIA_PREFIX = '/media/ckeditor/'
+CKEDITOR_UPLOAD_PATH = "c:/Users/Erik/PycharmProjects/HomeLegends/uploads"
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': [
-            [      'Undo', 'Redo',
-                   '-', 'Bold', 'Italic', 'Underline',
-                   '-', 'Link', 'Unlink', 'Anchor',
-                   '-', 'Format',
-                   '-', 'SpellChecker', 'Scayt',
-                   '-', 'Maximize',
-                   ],
-            [      'HorizontalRule',
-                   '-', 'Table',
-                   '-', 'BulletedList', 'NumberedList',
-                   '-', 'Cut','Copy','Paste','PasteText','PasteFromWord',
-                   '-', 'SpecialChar',
-                   '-', 'Source',
-                   '-', 'About',
-                   ]
-        ],
-        'width': 840,
-        'height': 300,
-        'toolbarCanCollapse': False,
-        }
+            'toolbar': 'Full',
+            'language': 'ru'
+            },
 }
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
