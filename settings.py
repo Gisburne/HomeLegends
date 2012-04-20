@@ -48,6 +48,8 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+CKEDITOR_MEDIA_URL = '/media/ckeditor'
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [
