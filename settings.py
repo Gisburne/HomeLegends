@@ -48,9 +48,34 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            [      'Undo', 'Redo',
+                   '-', 'Bold', 'Italic', 'Underline',
+                   '-', 'Link', 'Unlink', 'Anchor',
+                   '-', 'Format',
+                   '-', 'SpellChecker', 'Scayt',
+                   '-', 'Maximize',
+                   ],
+            [      'HorizontalRule',
+                   '-', 'Table',
+                   '-', 'BulletedList', 'NumberedList',
+                   '-', 'Cut','Copy','Paste','PasteText','PasteFromWord',
+                   '-', 'SpecialChar',
+                   '-', 'Source',
+                   '-', 'About',
+                   ]
+        ],
+        'width': 840,
+        'height': 300,
+        'toolbarCanCollapse': False,
+        }
+}
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = 'c:/Users/Erik/PycharmProjects/HomeLegends/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -122,6 +147,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'HomeLegends.Magazine',
+    'ckeditor',
 )
 
 # A sample logging configuration. The only tangible logging

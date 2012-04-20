@@ -1,5 +1,4 @@
 from django.db import models
-from wysiwyg import WYSIWYGField
 from django.utils.translation import ugettext as _
 
 # Create your models here.
@@ -40,7 +39,7 @@ class Tags(models.Model):
 
 class Publications(models.Model):
     p_title = models.CharField(max_length=250, default='***', verbose_name=_('title'))
-    p_text = models.WYSIWYGField(verbose_name=_('publication'))
+    p_text = models.TextField(verbose_name=_('publication'))
     p_date = models.DateField(verbose_name=_('data of publication'))
     aut = models.ManyToManyField(Autors)
     def __unicode__(self):
