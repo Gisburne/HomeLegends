@@ -61,3 +61,5 @@ class Pub_meta(models.Model):
     rub = models.ForeignKey(Rubiks)
     sta = models.ForeignKey(Stages)
     tag = models.ManyToManyField(Tags)
+    class Meta:
+        verbose_name = _('meta information')
