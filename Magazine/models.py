@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 class Autors(models.Model):
