@@ -1,14 +1,18 @@
 __author__ = 'Erik'
 
 from django.contrib import admin
+#from ckeditor.widgets import CKEditorWidget
 from HomeLegends.Magazine.models import Autors, Rubiks, Stages, Tags, Publications, Pub_meta
-#from ckeditor.widgets import CKEditor
+#from django import forms
 #from django.db import models
 
-#class PublicationAdmin(admin.ModelAdmin):
-#    formfield_overrides = {
-#        models.TextField: {'widget': CKEditor},
-#        }
+#class PublicationsAdminForm(forms.ModelForm):
+#    content = forms.Textarea(widget = CKEditorWidget())
+#    class Meta:
+#        model = Publications
+
+#class PublicationsAdmin(admin.ModelAdmin):
+#    form = PublicationsAdminForm
 
 admin.site.register(Autors)
 admin.site.register(Rubiks)
