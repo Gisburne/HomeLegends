@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from photologue.models import ImageModel
+from photologue.models import ImageModel, Gallery
 from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
@@ -60,6 +60,12 @@ class Publications(models.Model):
     class Meta:
         verbose_name = _('publication')
         verbose_name_plural = _('publications')
+
+class PubGalery(Gallery):
+    p_galery = models.OneToOneField(Publications, primary_key=True)
+    class Meta:
+        verbose_name = _('Publications galery')
+        verbose_name_plural = _('Publications galerys')
 
 class Members(models.Model):
     m_name = models.CharField(max_length=250, verbose_name=_('members name'))
