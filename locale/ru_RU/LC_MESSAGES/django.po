@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-19 15:58+0400\n"
+"POT-Creation-Date: 2012-04-24 11:25+0400\n"
 "PO-Revision-Date: 2012-04-20 13:00+0400\n"
 "Last-Translator: Erik <gisburne@gmail.com>\n"
 "Language-Team: private\n"
@@ -14,96 +14,128 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.7.1\n"
 
-#: Magazine/models.py:6
+#: Magazine/models.py:7
 msgid "first name"
 msgstr "Имя"
 
-#: Magazine/models.py:7
+#: Magazine/models.py:8
 msgid "midle name"
 msgstr "Oтчество"
 
-#: Magazine/models.py:8
+#: Magazine/models.py:9
 msgid "last name"
 msgstr "Фамилия"
 
-#: Magazine/models.py:9
+#: Magazine/models.py:10
 msgid "photo"
 msgstr "Фото"
 
-#: Magazine/models.py:10
+#: Magazine/models.py:11
 msgid "birthday"
 msgstr "День рождения"
 
-#: Magazine/models.py:11
+#: Magazine/models.py:12
 msgid "death day"
 msgstr "Дата смерти"
 
-#: Magazine/models.py:12
+#: Magazine/models.py:13
 msgid "e-mail"
 msgstr "Эл. почта"
 
-#: Magazine/models.py:16
+#: Magazine/models.py:17
+#, fuzzy
 msgid "autor"
-msgid_plural "autors"
-msgstr[0] "Автор"
-msgstr[1] "Авторы"
+msgstr "Автор"
 
-#: Magazine/models.py:19 Magazine/models.py:23
+#: Magazine/models.py:18
+#, fuzzy
+msgid "autors"
+msgstr "Автор"
+
+#: Magazine/models.py:21 Magazine/models.py:25
+#, fuzzy
 msgid "rubik"
-msgid_plural "rubiks"
-msgstr[0] "Рубика"
-msgstr[1] "Рубики"
+msgstr "Рубика"
 
 #: Magazine/models.py:26
+#, fuzzy
+msgid "rubiks"
+msgstr "Рубика"
+
+#: Magazine/models.py:29
 msgid "magazines number"
 msgstr "Номер журнала"
 
-#: Magazine/models.py:27
+#: Magazine/models.py:30
 msgid "data magazines number"
 msgstr "Дата номера журнала"
 
-#: Magazine/models.py:31
+#: Magazine/models.py:34
+#, fuzzy
 msgid "magazine"
-msgid_plural "magazines"
-msgstr[0] "Журнал"
-msgstr[1] "Журналы"
+msgstr "Журнал"
 
-#: Magazine/models.py:34 Magazine/models.py:38
+#: Magazine/models.py:35
+#, fuzzy
+msgid "magazines"
+msgstr "Журнал"
+
+#: Magazine/models.py:38 Magazine/models.py:42
+#, fuzzy
 msgid "tag"
-msgid_plural "tags"
-msgstr[0] "Метка"
-msgstr[1] "Метки"
+msgstr "Метка"
 
-#: Magazine/models.py:41
+#: Magazine/models.py:43
+msgid "tags"
+msgstr ""
+
+#: Magazine/models.py:46
 msgid "title"
 msgstr "Заголовок"
 
-#: Magazine/models.py:42 Magazine/models.py:48
+#: Magazine/models.py:47 Magazine/models.py:53
+#, fuzzy
 msgid "publication"
-msgid_plural "publications"
-msgstr[0] "Публикация"
-msgstr[1] "Публикации"
+msgstr "Публикация"
 
-#: Magazine/models.py:43
+#: Magazine/models.py:48
 msgid "data of publication"
 msgstr "Дата публикации"
 
-#: Magazine/models.py:51
+#: Magazine/models.py:54
+#, fuzzy
+msgid "publications"
+msgstr "Публикация"
+
+#: Magazine/models.py:57
 msgid "members name"
 msgstr "Имя пользователя"
 
-#: Magazine/models.py:52
+#: Magazine/models.py:58
 msgid "members e-mail"
 msgstr "Эл. почта пользователя"
 
-#: Magazine/models.py:53
+#: Magazine/models.py:59
 msgid "format"
 msgstr "Формат"
 
-#: Magazine/models.py:57
+#: Magazine/models.py:63
 msgid "member"
 msgstr "Пользователь"
+
+#: Magazine/models.py:64
+#, fuzzy
+msgid "members"
+msgstr "Пользователь"
+
+#: Magazine/models.py:72
+msgid "meta information"
+msgstr ""
+
+#: Magazine/models.py:73
+msgid "meta informations"
+msgstr ""
