@@ -1,4 +1,8 @@
 # Django settings for HomeLegends project.
+import sys
+from PIL import Image
+#import PIL.Image
+sys.modules['Image'] = Image
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -133,6 +137,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'HomeLegends.Magazine',
     'ckeditor',
+    'photologue',
 )
 
 # A sample logging configuration. The only tangible logging
