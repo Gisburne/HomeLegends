@@ -48,11 +48,15 @@ msgstr "Эл. почта"
 
 #: Magazine/models.py:16
 msgid "autor"
-msgstr "Автор"
+msgid_plural "autors"
+msgstr[0] "Автор"
+msgstr[1] "Авторы"
 
 #: Magazine/models.py:19 Magazine/models.py:23
 msgid "rubik"
-msgstr "Рубика"
+msgid_plural "rubiks"
+msgstr[0] "Рубика"
+msgstr[1] "Рубики"
 
 #: Magazine/models.py:26
 msgid "magazines number"
@@ -64,11 +68,15 @@ msgstr "Дата номера журнала"
 
 #: Magazine/models.py:31
 msgid "magazine"
-msgstr "Журнал"
+msgid_plural "magazines"
+msgstr[0] "Журнал"
+msgstr[1] "Журналы"
 
 #: Magazine/models.py:34 Magazine/models.py:38
 msgid "tag"
-msgstr "Метка"
+msgid_plural "tags"
+msgstr[0] "Метка"
+msgstr[1] "Метки"
 
 #: Magazine/models.py:41
 msgid "title"
@@ -76,7 +84,9 @@ msgstr "Заголовок"
 
 #: Magazine/models.py:42 Magazine/models.py:48
 msgid "publication"
-msgstr "Публикация"
+msgid_plural "publications"
+msgstr[0] "Публикация"
+msgstr[1] "Публикации"
 
 #: Magazine/models.py:43
 msgid "data of publication"

@@ -15,6 +15,7 @@ class Autors(models.Model):
         return u'%s %s %s' % (self.a_lname, self.a_name, self.a_mname)
     class Meta:
         verbose_name = _('autor')
+        verbose_name_plural = _('autors')
 
 class Rubiks(models.Model):
     rubik = models.CharField(max_length=100, verbose_name=_('rubik'))
@@ -22,6 +23,7 @@ class Rubiks(models.Model):
         return self.rubik
     class Meta:
         verbose_name = _('rubik')
+        verbose_name_plural = _('rubiks')
 
 class Stages(models.Model):
     stage = models.CharField(max_length=100, verbose_name=_('magazines number'))
@@ -30,6 +32,7 @@ class Stages(models.Model):
         return self.stage
     class Meta:
         verbose_name = _('magazine')
+        verbose_name_plural = _('magazines')
 
 class Tags(models.Model):
     tag = models.CharField(max_length=100, verbose_name=_('tag'))
@@ -37,6 +40,7 @@ class Tags(models.Model):
         return self.tag
     class Meta:
         verbose_name = _('tag')
+        verbose_name_plural = _('tags')
 
 class Publications(models.Model):
     p_title = models.CharField(max_length=250, default='***', verbose_name=_('title'))
@@ -47,6 +51,7 @@ class Publications(models.Model):
         return self.p_title
     class Meta:
         verbose_name = _('publication')
+        verbose_name_plural = _('publications')
 
 class Members(models.Model):
     m_name = models.CharField(max_length=250, verbose_name=_('members name'))
@@ -56,6 +61,7 @@ class Members(models.Model):
         return self.m_name
     class Meta:
         verbose_name = _('member')
+        verbose_name_plural = _('members')
 
 class Pub_meta(models.Model):
     pub = models.ForeignKey(Publications)
@@ -64,3 +70,4 @@ class Pub_meta(models.Model):
     tag = models.ManyToManyField(Tags)
     class Meta:
         verbose_name = _('meta information')
+        verbose_name_plural = _('meta informations')
