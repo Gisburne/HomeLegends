@@ -11,8 +11,11 @@ from HomeLegends.Magazine.models import Autors, Rubiks, Stages, Tags, Publicatio
 #    class Meta:
 #        model = Publications
 
-#class AutorsPhotoAdmin(admin.ModelAdmin):
-#    list_display = ['title', 'admin_thumbnail']
+class AutorsPhotoAdmin(admin.ModelAdmin):
+    list_display = ['title', 'admin_thumbnail']
+
+class PubGaleryAdmin(admin.ModelAdmin):
+    list_display = ['title', 'admin_thumbnail']
 
 admin.site.register(Autors)
 admin.site.register(Rubiks)
@@ -20,5 +23,5 @@ admin.site.register(Stages)
 admin.site.register(Tags)
 admin.site.register(Publications)
 admin.site.register(Pub_meta)
-admin.site.register(AutorPhoto)
-admin.site.register(PubGalery)
+admin.site.register(AutorPhoto, AutorsPhotoAdmin)
+admin.site.register(PubGalery, PubGaleryAdmin)

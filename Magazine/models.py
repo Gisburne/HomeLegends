@@ -20,7 +20,7 @@ class Autors(models.Model):
         verbose_name_plural = _('autors')
 
 class AutorPhoto(ImageModel):
-    a_photo = models.OneToOneField(Autors, primary_key=True)
+    a_photo = models.OneToOneField(Autors, primary_key=True, verbose_name = _('autors photo'))
 class Meta:
     verbose_name = _('autors photo')
     verbose_name_plural = _('autors photos')
@@ -62,7 +62,7 @@ class Publications(models.Model):
         verbose_name_plural = _('publications')
 
 class PubGalery(Gallery):
-    p_galery = models.OneToOneField(Publications, primary_key=True)
+    p_galery = models.OneToOneField(Publications, primary_key=True, verbose_name = _('Publications galery'))
     class Meta:
         verbose_name = _('Publications galery')
         verbose_name_plural = _('Publications galerys')
