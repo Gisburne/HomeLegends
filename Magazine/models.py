@@ -1,10 +1,9 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from photologue.models import ImageModel, Gallery
-import tagging
+from photologue.models import ImageModel
+from tagging.models import TagManager
 from tagging.fields import TagField
 from tagging.models import Tag
-from tagging.utils import parse_tag_input
 from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
@@ -12,7 +11,6 @@ class Autors(models.Model):
     a_name = models.CharField(max_length=100, verbose_name=_('first name'))
     a_mname = models.CharField(max_length=100, blank=True, null=True, verbose_name=_('midle name'))
     a_lname = models.CharField(max_length=100, verbose_name=_('last name'))
-#    a_photo = models.ImageField(upload_to='uploads/flatpictures', blank=True, null=True, verbose_name=_('photo'))
     a_birthdate = models.DateField(verbose_name=_('birthday'))
     a_deathdate = models.DateField(blank=True, null=True, verbose_name=_('death day'))
     a_email = models.EmailField(verbose_name=_('e-mail'))
@@ -45,51 +43,21 @@ class Stages(models.Model):
         verbose_name = _('magazine')
         verbose_name_plural = _('magazines')
 
-#class Tags(models.Model):
-#    tag = models.CharField(max_length=100, verbose_name=_('tag'))
-#    def __unicode__(self):
-#        return self.tag
-#    class Meta:
-#        verbose_name = _('tag')
-#        verbose_name_plural = _('tags')
-
 class Publications(models.Model):
     p_title = models.CharField(max_length=250, default='***', verbose_name=_('title'))
     p_text = RichTextField(verbose_name=_('publication'))
     p_date = models.DateField(verbose_name=_('data of publication'))
-    aut = models.ManyToManyField(Autors)
+    tags = TagField(verbose_name=_('tag'))
+#    p_galery = models.OneToOneField('photologue_gallery', blank=True, null=True, verbose_name = _('Publications galery'))
+    aut = models.ManyToManyField(Autors, verbose_name=_('autor'))
+    rub = models.ForeignKey(Rubiks, verbose_name=_('rubik'))
+    sta = models.ForeignKey(Stages, verbose_name=_('magazine'))
     def __unicode__(self):
         return self.p_title
+    def get_tag(self):
+        return Tag.objects.get_for_object(self)
+    def set_tag(self, tag_list):
+        return Tag.objects.update_tags(self, tag_list)
     class Meta:
         verbose_name = _('publication')
         verbose_name_plural = _('publications')
-
-class PubGalery(Gallery):
-    p_galery = models.OneToOneField(Publications, primary_key=True, verbose_name = _('Publications galery'))
-    class Meta:
-        verbose_name = _('Publications galery')
-        verbose_name_plural = _('Publications galerys')
-
-class Members(models.Model):
-    m_name = models.CharField(max_length=250, verbose_name=_('members name'))
-    m_mail = models.EmailField(verbose_name=_('members e-mail'))
-    m_format = models.CharField(max_length=3, default='pdf', verbose_name=_('format'))
-    def __unicode__(self):
-        return self.m_name
-    class Meta:
-        verbose_name = _('member')
-        verbose_name_plural = _('members')
-
-class Pub_meta(models.Model):
-    pub = models.ForeignKey(Publications)
-    rub = models.ForeignKey(Rubiks)
-    sta = models.ForeignKey(Stages)
-#    tag = models.ManyToManyField(Tags)
-    tags = TagField(verbose_name = 'tag')
-    def get_tag(self):
-        return Tag.objects.get_for_object(self)
-    def __unicode__(self):
-        return Publications.p_title
-    class Meta:
-        verbose_name = _('meta information')
-        verbose_name_plural = _('meta informations')

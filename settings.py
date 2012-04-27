@@ -53,7 +53,7 @@ USE_I18N = True
 USE_L10N = True
 
 #CKEDITOR_MEDIA_PREFIX = '/media/'
-CKEDITOR_UPLOAD_PATH = "c:/Users/Erik/PycharmProjects/HomeLegends/uploads"
+CKEDITOR_UPLOAD_PATH = "c:/Users/Erik/PycharmProjects/HomeLegends/media"
 
 CKEDITOR_CONFIGS = {
     'default': {
