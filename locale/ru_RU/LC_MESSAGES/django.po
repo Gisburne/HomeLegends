@@ -51,11 +51,11 @@ msgid "autors"
 msgstr "Авторы"
 
 #: Magazine/models.py:23 Magazine/models.py:25
-msgid "autors photo"
+msgid "autor photo"
 msgstr "Фотография автора"
 
 #: Magazine/models.py:26
-msgid "autors photos"
+msgid "autor photos"
 msgstr "Фотографии авторов"
 
 #: Magazine/models.py:29 Magazine/models.py:33

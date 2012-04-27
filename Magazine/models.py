@@ -1,6 +1,10 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from photologue.models import ImageModel, Gallery
+import tagging
+from tagging.fields import TagField
+from tagging.models import Tag
+from tagging.utils import parse_tag_input
 from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
@@ -12,7 +16,6 @@ class Autors(models.Model):
     a_birthdate = models.DateField(verbose_name=_('birthday'))
     a_deathdate = models.DateField(blank=True, null=True, verbose_name=_('death day'))
     a_email = models.EmailField(verbose_name=_('e-mail'))
-    #a_photo = models.ForeignKey('AutorPhoto')
     def __unicode__(self):
         return u'%s %s %s' % (self.a_lname, self.a_name, self.a_mname)
     class Meta:
@@ -20,10 +23,10 @@ class Autors(models.Model):
         verbose_name_plural = _('autors')
 
 class AutorPhoto(ImageModel):
-    a_photo = models.OneToOneField(Autors, primary_key=True, verbose_name = _('autors photo'))
+    a_photo = models.OneToOneField(Autors, primary_key=True, verbose_name = _('autor photo'))
 class Meta:
-    verbose_name = _('autors photo')
-    verbose_name_plural = _('autors photos')
+    verbose_name = _('autor photo')
+    verbose_name_plural = _('autor photos')
 
 class Rubiks(models.Model):
     rubik = models.CharField(max_length=100, verbose_name=_('rubik'))
@@ -42,13 +45,13 @@ class Stages(models.Model):
         verbose_name = _('magazine')
         verbose_name_plural = _('magazines')
 
-class Tags(models.Model):
-    tag = models.CharField(max_length=100, verbose_name=_('tag'))
-    def __unicode__(self):
-        return self.tag
-    class Meta:
-        verbose_name = _('tag')
-        verbose_name_plural = _('tags')
+#class Tags(models.Model):
+#    tag = models.CharField(max_length=100, verbose_name=_('tag'))
+#    def __unicode__(self):
+#        return self.tag
+#    class Meta:
+#        verbose_name = _('tag')
+#        verbose_name_plural = _('tags')
 
 class Publications(models.Model):
     p_title = models.CharField(max_length=250, default='***', verbose_name=_('title'))
@@ -81,7 +84,12 @@ class Pub_meta(models.Model):
     pub = models.ForeignKey(Publications)
     rub = models.ForeignKey(Rubiks)
     sta = models.ForeignKey(Stages)
-    tag = models.ManyToManyField(Tags)
+#    tag = models.ManyToManyField(Tags)
+    tags = TagField(verbose_name = 'tag')
+    def get_tag(self):
+        return Tag.objects.get_for_object(self)
+    def __unicode__(self):
+        return Publications.p_title
     class Meta:
         verbose_name = _('meta information')
         verbose_name_plural = _('meta informations')
