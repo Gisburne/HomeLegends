@@ -53,7 +53,7 @@ USE_I18N = True
 USE_L10N = True
 
 #CKEDITOR_MEDIA_PREFIX = '/media/'
-CKEDITOR_UPLOAD_PATH = "c:/Users/Erik/PycharmProjects/HomeLegends/media"
+CKEDITOR_UPLOAD_PATH = "c:/HomeLegends/media"
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -64,7 +64,7 @@ CKEDITOR_CONFIGS = {
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = 'c:/Users/Erik/PycharmProjects/HomeLegends/media/'
+MEDIA_ROOT = 'c:/HomeLegends/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -75,7 +75,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = 'c:/Users/Erik/PycharmProjects/HomeLegends/staticfiles/'
+STATIC_ROOT = 'c:/HomeLegends/staticfiles/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -122,7 +122,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'HomeLegends.urls'
 
-TEMPLATE_DIRS = ('c:/Users/Erik/PycharmProjects/HomeLegends/templates',)
+TEMPLATE_DIRS = ('c:/HomeLegends/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
