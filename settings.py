@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'photologue',
     'tagging',
+    'django_evolution',
 )
 
 # A sample logging configuration. The only tangible logging

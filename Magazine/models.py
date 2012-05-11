@@ -1,7 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from photologue.models import ImageModel
-from tagging.models import TagManager
+from photologue.models import Photo, Gallery
 from tagging.fields import TagField
 from tagging.models import Tag
 from django.utils.translation import ugettext_lazy as _
@@ -20,8 +19,8 @@ class Autors(models.Model):
         verbose_name = _('autor')
         verbose_name_plural = _('autors')
 
-class AutorPhoto(ImageModel):
-    a_photo = models.OneToOneField(Autors, primary_key=True, verbose_name = _('autor photo'))
+class AutorPhoto(Photo):
+    a_photo = models.OneToOneField(Autors, primary_key=True)
 class Meta:
     verbose_name = _('autor photo')
     verbose_name_plural = _('autor photos')
@@ -48,7 +47,6 @@ class Publications(models.Model):
     p_text = RichTextField(verbose_name=_('publication'))
     p_date = models.DateField(verbose_name=_('data of publication'))
     tags = TagField(verbose_name=_('tag'))
-#    p_galery = models.OneToOneField('photologue_gallery', blank=True, null=True, verbose_name = _('Publications galery'))
     aut = models.ManyToManyField(Autors, verbose_name=_('autor'))
     rub = models.ForeignKey(Rubiks, verbose_name=_('rubik'))
     sta = models.ForeignKey(Stages, verbose_name=_('magazine'))
@@ -61,3 +59,9 @@ class Publications(models.Model):
     class Meta:
         verbose_name = _('publication')
         verbose_name_plural = _('publications')
+
+class Pub_gallery(Gallery):
+    p_gallery = models.OneToOneField(Publications, primary_key=True)
+    class Meta:
+        verbose_name = _('publication gallery')
+        verbose_name_plural = _('publication galleries')
